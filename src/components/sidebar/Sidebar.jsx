@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Dropdown from "../util/Dropdown"
-import { ClipboardData, BarChart, GearWideConnected, PersonFillGear, ChevronLeft, BoxFill, Images, PencilSquare, GearFill } from "react-bootstrap-icons"
+import { ClipboardData, BarChart, GearWideConnected, HouseFill, List, PersonFillGear, ChevronLeft, BoxFill, Images, PencilSquare, GearFill } from "react-bootstrap-icons"
 import { signOut } from "next-auth/react"
 import { useSession } from "next-auth/react"
 import Link from "next/link"
@@ -35,17 +35,40 @@ export default Sidebar
 
 const SidebarLevel1 = (props) =>{
 
+    const [collapsed, setCollapsed] = useState(false)
+
     return(
-        <div class="flex-shrink-0 p-3 text-bg-dark col " style={{maxWidth: "250px"}}>
+        <div class="flex-shrink-0 p-3 text-bg-dark col " style={{maxWidth: (collapsed?"100px":"250px")}}>
           
             <ul class="nav nav-pills flex-column mb-auto">
+                {
+                    collapsed &&
+                    <li class="nav-item">
+                        <button 
+                            className="btn btn-lg btn-dark d-flex"
+                            onClick={()=>setCollapsed(p=>!p)}
+                        >
+                            <List/>
+                        </button>
+                    </li>
+                }
+                <li class="nav-item d-flex flex-row align-items-center">
                 
-                <li class="nav-item">
-                
-                    <Link href="/" class="fs-4 nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        {/* <HouseFill className="me-2"/> */}
-                        AYQA
+                    
+                    <Link href="/" class={"nav-link text-white d-flex flex-row align-items-center "+(collapsed?"":"fs-4")} aria-current="page">
+                        {
+                            collapsed ? <HouseFill className="me-2"/> :"AYQA"
+                        }
                     </Link>
+                    {
+                        !collapsed &&
+                        <button 
+                            className="btn btn-lg btn-dark ms-auto d-flex"
+                            onClick={()=>setCollapsed(p=>!p)}
+                        >
+                            <List/>
+                        </button>
+                    }   
                 </li>
                 <hr/>
 
@@ -55,8 +78,10 @@ const SidebarLevel1 = (props) =>{
                         icon = {<ClipboardData className="me-2"/>}
                         buttonContent = "Projects"
                         id = {"projects-dropdown"}
+                        collapsed = {collapsed}
+                        // onClick = {()=>setCollapsed(false)}
                     >
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ms-4 ">
+                        <ul class={"btn-toggle-nav list-unstyled fw-normal pb-1 small "+(collapsed?"":"ms-4")}>
                             {
                                 props.projects.map((el,index)=>{
                                     return(
@@ -67,22 +92,27 @@ const SidebarLevel1 = (props) =>{
                                 })
                             }
                            
-                            <li><button className="ms-2 nav-link text-white border my-2">+ Create New Project</button></li>
+                            <li><button className="ms-2 nav-link text-white border my-2">+ {!collapsed&&"Create New Project"}</button></li>
                         </ul>
                     </Dropdown>
                     
                 </li>
                 <li class="nav-item">
-                    <Link href="/reports" class="nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        <BarChart className="me-2"/>
-                        Reports
-                    </Link>
+                    <CollapsableLink
+                        href ="/reports"
+                        text = "Reports"
+                        icon = {<BarChart className="me-2"/>}
+                        collapsed = {collapsed}
+                    />
                 </li>
                 <li class="nav-item">
-                    <Link href="/settings" class="nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        <GearWideConnected className="me-2"/>
-                        Settings
-                    </Link>
+                    <CollapsableLink
+                        href ="/settings"
+                        text = "Settings"
+                        icon = {<GearWideConnected className="me-2"/>}
+                        collapsed = {collapsed}
+                    />
+                   
                 </li>
                 <hr/>
                 <li class="nav-item">
@@ -90,6 +120,7 @@ const SidebarLevel1 = (props) =>{
                         icon = {<PersonFillGear className="me-2"/>}
                         buttonContent = "Account"
                         key = {"profile-dropdown"}
+                        collapsed = {collapsed}
                     >
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ms-4 ">
 
@@ -153,5 +184,14 @@ const SidebarLevel2 = (props) =>{
             </ul>
            
         </div>
+    )
+}
+
+const CollapsableLink = (props) =>{
+    return(
+        <Link href={props.href} class="nav-link text-white d-flex flex-row align-items-center">
+            {props.icon}
+            {!props.collapsed && props.text}
+        </Link>
     )
 }

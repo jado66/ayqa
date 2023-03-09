@@ -6,11 +6,11 @@ const Dropdown = (props) =>{
 
 
     return(
-        <>
+        <div onClick={props.onClick}>
             <button class="nav-link text-white" data-bs-toggle={"collapse"} data-bs-target={`#${props.id}-collapse`} aria-expanded="true" onClick={()=>setShowProjects(p=>!p)}>
                 <div className="d-flex flex-row align-items-center">
                     { props.icon && props.icon}
-                    { props.buttonContent }
+                    { !props.collapsed && props.buttonContent }
                     {
                         <ChevronDown className={"ms-2 text-white animate-icon "+(showProjects?"flipped":"")} />
                     }
@@ -22,7 +22,7 @@ const Dropdown = (props) =>{
                     props.children
                 }
             </div>
-        </>
+        </div>
         
     )
 }
