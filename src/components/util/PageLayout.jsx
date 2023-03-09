@@ -16,7 +16,7 @@ const PageLayout = (props) =>{
                 !props.noSidebar &&
                     <Sidebar/>
             }
-            <div className={"col-9 "+props.className}> 
+            <div className={"col "+props.className}> 
                 {props.children}
             </div>
         </div>

@@ -24,10 +24,8 @@ export default function Overview() {
           debug
           
         >
-          <PageLayout>
             {/* <Sidebar/> */}
             <h1 className='text-center mt-4'>{query.project} Overview</h1>
-          </PageLayout>
         </ProtectedContent>
       </main>
     </>

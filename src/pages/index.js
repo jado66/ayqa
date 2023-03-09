@@ -21,14 +21,10 @@ export default function Home({ providers }) {
         <ProtectedContent
           debug
           alt = {
-            <PageLayout  className = "h-100 col-lg-6 col-10 mt-5" noNavbar noSidebar>
               <SignIn providers = {providers}/>
-            </PageLayout>
           }
         >
-          <PageLayout>
             <h1 className='text-center mt-4'>Home</h1>
-          </PageLayout>
         </ProtectedContent>
       </main>
     </>

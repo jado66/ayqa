@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import '../styles/styles.scss'
 import { SessionProvider } from 'next-auth/react';
 import { useEffect } from 'react';
+import PageLayout from '@/components/util/PageLayout';
 
 export default function App({ Component, pageProps, session }) {
 
@@ -11,7 +12,9 @@ export default function App({ Component, pageProps, session }) {
   
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
     </SessionProvider>
 
   )

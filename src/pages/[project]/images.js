@@ -24,10 +24,8 @@ export default function Images() {
           debug
           
         >
-          <PageLayout>
             {/* <Sidebar/> */}
             <h1 className='text-center mt-4'>{query.project} Images</h1>
-          </PageLayout>
         </ProtectedContent>
       </main>
     </>

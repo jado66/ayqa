@@ -38,7 +38,7 @@ const SidebarLevel1 = (props) =>{
     const [collapsed, setCollapsed] = useState(false)
 
     return(
-        <div class="flex-shrink-0 p-3 text-bg-dark col " style={{maxWidth: (collapsed?"100px":"250px")}}>
+        <div class={"flex-shrink-0 p-3 text-bg-dark col "+(collapsed?"px-1 col-2":"")} style={{maxWidth: (collapsed?"100px":"250px")}}>
           
             <ul class="nav nav-pills flex-column mb-auto">
                 {
@@ -57,7 +57,7 @@ const SidebarLevel1 = (props) =>{
                     
                     <Link href="/" class={"nav-link text-white d-flex flex-row align-items-center "+(collapsed?"":"fs-4")} aria-current="page">
                         {
-                            collapsed ? <HouseFill className="me-2"/> :"AYQA"
+                            collapsed ? <HouseFill className="me-3"/> :"AYQA"
                         }
                     </Link>
                     {
@@ -75,7 +75,7 @@ const SidebarLevel1 = (props) =>{
                 <li class="nav-item">
                     
                     <Dropdown
-                        icon = {<ClipboardData className="me-2"/>}
+                        icon = {<ClipboardData className="me-3"/>}
                         buttonContent = "Projects"
                         id = {"projects-dropdown"}
                         collapsed = {collapsed}
@@ -86,30 +86,33 @@ const SidebarLevel1 = (props) =>{
                                 props.projects.map((el,index)=>{
                                     return(
                                         <li key={el+'-li'}>
-                                            <button onClick={()=>props.selectProject(el)} class="nav-link text-white">{el}</button>
+                                            <button onClick={()=>props.selectProject(el)} class={"nav-link text-white "+(collapsed?"px-1":"")}>{el}</button>
                                         </li>
                                     )
                                 })
                             }
                            
-                            <li><button className="ms-2 nav-link text-white border my-2">+ {!collapsed&&"Create New Project"}</button></li>
+                            <li className={"w-75  px-2 d-flex "+(collapsed?"mx-auto":"")}><button className={" nav-link text-white border my-2 flex-grow-1 text-nowrap"}>+ {!collapsed&&"Create New Project"}</button></li>
                         </ul>
                     </Dropdown>
                     
                 </li>
+                <hr className="w-75 mx-auto my-1 border-secondary"/>
                 <li class="nav-item">
                     <CollapsableLink
                         href ="/reports"
                         text = "Reports"
-                        icon = {<BarChart className="me-2"/>}
+                        icon = {<BarChart className="me-3"/>}
                         collapsed = {collapsed}
                     />
                 </li>
+                {/* <hr className="w-75 mx-auto my-1 border-secondary"/> */}
+
                 <li class="nav-item">
                     <CollapsableLink
                         href ="/settings"
                         text = "Settings"
-                        icon = {<GearWideConnected className="me-2"/>}
+                        icon = {<GearWideConnected className="me-3"/>}
                         collapsed = {collapsed}
                     />
                    
@@ -117,7 +120,7 @@ const SidebarLevel1 = (props) =>{
                 <hr/>
                 <li class="nav-item">
                     <Dropdown
-                        icon = {<PersonFillGear className="me-2"/>}
+                        icon = {<PersonFillGear className="me-3"/>}
                         buttonContent = "Account"
                         key = {"profile-dropdown"}
                         collapsed = {collapsed}
@@ -131,6 +134,8 @@ const SidebarLevel1 = (props) =>{
                         </ul>
                     </Dropdown>
                 </li>
+                <hr className="w-75 mx-auto my-1 border-secondary"/>
+
             </ul>
             
             
@@ -158,25 +163,25 @@ const SidebarLevel2 = (props) =>{
 
                 <li class="nav-item">
                     <Link href={props.selectedProject.replace(" ","_")+"/overview"} class="nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        <BoxFill className="me-2"/>
+                        <BoxFill className="me-3"/>
                         Overview
                     </Link>
                 </li>
                 <li class="nav-item">
                     <Link href={props.selectedProject+"/images"} class="nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        <Images className="me-2"/>
+                        <Images className="me-3"/>
                         Images
                     </Link>
                 </li>
                 <li class="nav-item">
                     <Link href={props.selectedProject+"/annotate"} class="nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        <PencilSquare className="me-2"/>
+                        <PencilSquare className="me-3"/>
                         Annotate
                     </Link>
                 </li>
                 <li class="nav-item">
                     <Link href={props.selectedProject+"/project-settings"} class="nav-link text-white d-flex flex-row align-items-center" aria-current="page">
-                        <GearFill className="me-2"/>
+                        <GearFill className="me-3"/>
                         Project Settings
                     </Link>
                 </li>

@@ -20,10 +20,8 @@ export default function Account() {
           debug
           
         >
-          <PageLayout>
             {/* <Sidebar/> */}
             <h1 className='text-center mt-4'>Your Account</h1>
-          </PageLayout>
         </ProtectedContent>
       </main>
     </>
