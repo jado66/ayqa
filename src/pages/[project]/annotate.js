@@ -25,7 +25,7 @@ export default function Images() {
           
         >
             {/* <Sidebar/> */}
-            <h1 className='text-center mt-4'>Annotate {query.project}</h1>
+            <h1 className='text-center mt-4'>Annotate {query.project.replaceAll("_"," ")}</h1>
         </ProtectedContent>
       </main>
     </>

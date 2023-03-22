@@ -36,7 +36,7 @@ const Sidebar = (props) =>{
 export default Sidebar
 
 
-const SidebarLevel1 = ({collapsed, projects, setSelectedProject}) =>{
+const SidebarLevel1 = ({collapsed, projects, setSelectedProject, selectProject}) =>{
 
 
     return(
@@ -153,7 +153,7 @@ const SidebarLevel2 = (props) =>{
                     <ChevronLeft/>
                 </button>
                 <span class="fs-4 py-2">
-                    {props.selectedProject}
+                    {props.selectedProject.replaceAll('_',' ')}
                 </span>
             </div>
             <hr/>

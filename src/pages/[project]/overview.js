@@ -25,7 +25,7 @@ export default function Overview() {
           
         >
             {/* <Sidebar/> */}
-            <h1 className='text-center mt-4'>{query.project} Overview</h1>
+            <h1 className='text-center mt-4'>{query.project.replaceAll("_"," ")} Overview</h1>
         </ProtectedContent>
       </main>
     </>
