@@ -171,7 +171,7 @@ const AnnotateImages = (props) => {
     <div className="d-flex justify-content-center border position-relative rounded-2">
       <div className="position-absolute top-0 end-0 pt-0 d-flex pe-1 pt-1 " style={{zIndex:2000}}>
          
-        <button className={"badge btn btn-sm "+(annotation === 'Ok'?"btn-success":"btn-danger")}
+        <button className={"badge btn btn-sm border-dark "+(annotation === 'Ok'?"btn-success":"btn-danger")}
           onClick={() => setAnnotation(annotation === 'Ok'?"Bad":"Ok")}
         >{annotation}</button>
       </div>
