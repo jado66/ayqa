@@ -4,6 +4,7 @@ import { SessionProvider } from 'next-auth/react';
 import { useEffect } from 'react';
 import PageLayout from '@/components/util/PageLayout';
 
+
 export default function App({ Component, pageProps, session }) {
 
   useEffect(() => {
