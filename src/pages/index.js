@@ -99,7 +99,7 @@ export default function Home({ providers }) {
                  </div>
                 </div>
                 </div>
-              <hr></hr>
+              {/* <hr></hr> */}
                 <div className='segment-container2'>
               <div className='width-container'>
                 <div className='info3'>
@@ -115,7 +115,7 @@ export default function Home({ providers }) {
                  </div>
                  </div>
                  </div>
-                  <hr></hr>
+                  {/* <hr></hr> */}
                 <div className='segment-container2'>
                 <div className='width-container'>
                 <div className='info3'>
@@ -139,7 +139,7 @@ export default function Home({ providers }) {
                  </div>
                  </div>
                  </div>
-                <hr></hr>
+                {/* <hr></hr> */}
                  <div className='segment-container2'>
                 <div className='width-container'>
                 <div className='info3'>
@@ -163,7 +163,84 @@ export default function Home({ providers }) {
                  </div>
                  </div>
                  </div>
+
+                {/* <hr></hr> */}
+
+                 <div className='segment-container2'>
+                <div className='width-container'>
+                <div className='info3'>
+                  <h1>Triggering Actions Based on Model Output</h1>
+                  <br/>
+                  <p>AYQA's system automatically triggers actions based on the output of the Machine Learning model. Specifically, it can stop production, trigger Quality Control processes or suggest maintenance on the assembly line, effectively automating quality assurance.</p>
+                </div>
+                <div className='cards-box'>
+                  <div className='cards4'>
+                  <img className='medium-container-image' src='https://media.istockphoto.com/id/1296904409/photo/artificial-intelligence-and-technology.jpg?b=1&s=170667a&w=0&k=20&c=hDEIjm-ovZ8I5z0JyHWp2k2UohQClsLNqZOK3b2KPOA='></img>
+                    <h4>Quick Problem Resolution</h4>
+                    <p>Instantaneous machine learning powered analysis pinpoints problems swiftly, allowing for quick resolution of issues saving time and money.</p>
+                  </div>
+                  <div className='cards4'>
+                  <img className='medium-container-image' src='https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></img>
+                    <h4>Automated Quality Control</h4>
+                    <p>Efficient Machine Learning-based quality assurance saves time and money by identifying issues before products leave the plant.</p>
+                  </div>
                  </div>
+                 </div>
+                 </div>
+                {/* <hr></hr> */}
+                 <div className='segment-container2'>
+                <div className='width-container'>
+                <div className='info3'>
+                  <h1>Benefits of Using AYQA for Quality Assurance in Manufacturing</h1>
+                  <br/>
+                  <p>AYQA effectively streamlines quality assurance in manufacturing, delivering benefits such as:</p>
+                </div>
+                <div className='cards-box'>
+                  
+                  <div className='cards'>
+                    <h1 className='bluelist'>1</h1>
+                    <h3>Reduced Costs</h3>
+                    <p>By reducing errors and streamlining quality control, AYQA's Machine Learning-powered, automated systems lowers the cost for companies to produce high-quality products.</p>
+                  </div>
+                  <div className='cards'>
+                    <h1 className='bluelist'>2</h1>
+                    <h3>Improved Quality</h3>
+                    <p>The accuracy of AYQA-powered quality control reduces the number of defective products produced, improving product quality across the board.</p>
+                  </div>
+                  <div className='cards'>
+                    <h1 className='bluelist'>3</h1>
+                    <h3>Increased Efficiency</h3>
+                    <p>Standardizing, automating and integrating quality inspections saves time and allows for faster, safer production line operations.</p>
+                  </div>
+                 </div>
+                 </div>
+                 </div>
+                 {/* <hr></hr> */}
+                 <div className='segment-container2'>
+              <div className='hor-width-container'>
+                <div className='info1'>
+                  <h1>Request a Demo</h1>
+                  <br/>
+                  <p>Request a demo of AYQA today and discover how machine learning can benefit your manufacturing operations.</p>
+                  <br/>
+                  <button className='button1'>Request a Demo</button>
+                </div>
+                <div className='image'>
+                  <img className='container-image' src='https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></img>
+                </div>
+              </div>
+              </div>
+              </div>
+              <div className='large-box'>
+              <div className='width-container'>
+                <div className='info2'>
+                  <h1>Contact Us</h1>
+                  <br/>
+                  <p>Have questions or want to learn more? Contact us today!</p>
+                  <button className='button2'>Contact Us</button>
+                </div>
+                </div>
+                </div>
 
             </div>
         </ProtectedContent>
